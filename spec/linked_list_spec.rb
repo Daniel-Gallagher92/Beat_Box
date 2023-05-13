@@ -22,8 +22,6 @@ RSpec.describe Linked_list do
     puts linked_list
     linked_list.append("doop")
 
-    expect(linked_list.head).to_not eq(nil)
-    expect(linked_list.head).to be_an_instance_of(Node)
     expect(linked_list.head.data).to eq("doop")
   end
 
@@ -46,9 +44,9 @@ RSpec.describe Linked_list do
   it "concats to string" do 
     linked_list = Linked_list.new
     linked_list.append("doop")
+    linked_list.append("beep")
+    linked_list.append("boop")
 
-    result = linked_list.append("doop").to_s
-
-    expect(linked_list.to_s).to eq("deep doop boosh")
+    expect(linked_list.to_s).to eq("doop beep boop")
   end
 end
