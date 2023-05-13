@@ -18,25 +18,29 @@ class Linked_list
     end
   end
 
-  def count 
-    if self.head.nil?
-      0
-    else
-      1
+  def count
+    counter = 0
+    current_node = self.head
+    until current_node == nil
+      current_node = current_node.next_node
+      counter += 1
     end
+    counter
   end
  
   def to_s 
-    beats = []
+    phat_beats = []
     current_node = self.head
     until current_node == nil
-      beats << current_node.data
+      phat_beats << current_node.data
       current_node = current_node.next_node
     end
-    beats.join(" ")
+    phat_beats.join(" ")
   end
 
-  # def prepend(data)
-  #   @head = Node.new(data, @head)
-  # end
+  def prepend(data)
+    node = Node.new(data, nil)
+    node.next_node = head
+    self.head = node 
+  end
 end
