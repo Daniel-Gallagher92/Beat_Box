@@ -62,5 +62,14 @@ RSpec.describe Linked_list do
     expect(linked_list.to_s).to eq("doom ka pow")
   end
 
+  it "can insert" do 
+    linked_list = Linked_list.new
+    linked_list.append("pow")
+    linked_list.append("ka")
+    linked_list.append("doom")
+    linked_list.insert(1,"doom")
+
+    expect(linked_list.to_s).to eq("pow doom ka doom")
+  end
 
 end
