@@ -34,3 +34,11 @@ RSpec.describe Linked_list do
 
     expect(linked_list.count).to eq(0)
   end
+
+  it "can count" do 
+    linked_list = Linked_list.new
+    puts linked_list
+    linked_list.append("doop")
+
+    expect(linked_list.count).to eq(1)
+  end
