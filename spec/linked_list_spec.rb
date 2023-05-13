@@ -72,4 +72,13 @@ RSpec.describe Linked_list do
     expect(linked_list.to_s).to eq("pow doom ka doom")
   end
 
+  it "can find node" do 
+    linked_list = Linked_list.new
+    linked_list.append("pow")
+    linked_list.append("ka")
+    linked_list.append("doom")
+
+    expect(linked_list.find("ka")).to eq("ka")
+  end
+
 end
