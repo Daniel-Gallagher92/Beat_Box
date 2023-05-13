@@ -42,3 +42,13 @@ RSpec.describe Linked_list do
 
     expect(linked_list.count).to eq(1)
   end
+
+  it "concats to string" do 
+    linked_list = Linked_list.new
+    linked_list.append("doop")
+
+    result = linked_list.append("doop").to_s
+
+    expect(linked_list.to_s).to eq("deep doop boosh")
+  end
+end
