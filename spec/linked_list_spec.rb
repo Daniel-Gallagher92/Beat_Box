@@ -2,12 +2,29 @@ require './lib/linked_list'
 require './lib/node'
 
 RSpec.describe Linked_list do 
+
   it "exists" do 
-    list = Linked_list.new(nil)
-    expect(list).to be_an_instance_of(Linked_list)
+    linked_list = Linked_list.new
+    puts linked_list
+
+    expect(linked_list).to be_an_instance_of(Linked_list)
   end
+
   it "has nil head" do 
-    list = Linked_list.new(nil)
-    expect(list.head).to eq(nil)
+    linked_list = Linked_list.new
+    puts linked_list
+
+    expect(linked_list.head).to eq(nil)
   end
-end
+
+  it "can append" do 
+    linked_list = Linked_list.new
+    puts linked_list
+    linked_list.append("doop")
+
+    expect(linked_list.head).to_not eq(nil)
+    expect(linked_list.head).to be_an_instance_of(Node)
+    expect(linked_list.head.data).to eq("doop")
+  end
+
+  
