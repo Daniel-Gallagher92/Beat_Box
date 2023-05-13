@@ -27,4 +27,10 @@ RSpec.describe Linked_list do
     expect(linked_list.head.data).to eq("doop")
   end
 
-  
+  it "can count empty list" do 
+    linked_list = Linked_list.new
+    puts linked_list
+    linked_list.count
+
+    expect(linked_list.count).to eq(0)
+  end
