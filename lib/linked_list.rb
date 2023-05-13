@@ -53,4 +53,17 @@ class Linked_list
    insertion.next_node = current_node.next_node
    current_node.next_node = insertion
   end
+
+  def find(data) 
+    node = self.head
+    while node != nil 
+      if(node.data == data)
+        return data
+      end
+      node = node.next_node
+    end
+
+    false
+  end
+  
 end
