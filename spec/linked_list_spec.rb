@@ -17,7 +17,7 @@ RSpec.describe Linked_list do
     expect(linked_list.head).to eq(nil)
   end
 
-  it "can append" do 
+  it "can append mutiple nodes" do 
     linked_list = Linked_list.new
     puts linked_list
     linked_list.append("doop")
@@ -33,12 +33,15 @@ RSpec.describe Linked_list do
     expect(linked_list.count).to eq(0)
   end
 
-  it "can count" do 
+  it "can count multiple nodes" do 
     linked_list = Linked_list.new
     puts linked_list
-    linked_list.append("doop")
+    linked_list.append("shoop")
+    linked_list.append("de")
+    linked_list.append("woop")
+    linked_list.append("derrr")
 
-    expect(linked_list.count).to eq(1)
+    expect(linked_list.count).to eq(4)
   end
 
   it "concats to string" do 
@@ -49,4 +52,15 @@ RSpec.describe Linked_list do
 
     expect(linked_list.to_s).to eq("doop beep boop")
   end
+  
+  it "can PREpend" do 
+    linked_list = Linked_list.new
+    linked_list.prepend("pow")
+    linked_list.prepend("ka")
+    linked_list.prepend("doom")
+
+    expect(linked_list.to_s).to eq("doom ka pow")
+  end
+
+
 end
