@@ -43,4 +43,14 @@ class Linked_list
     node.next_node = head
     self.head = node 
   end
+
+  def insert(index, data)
+   current_node = self.head
+   (index - 1).times do
+    current_node = current_node.next_node
+   end
+   insertion = Node.new(data)
+   insertion.next_node = current_node.next_node
+   current_node.next_node = insertion
+  end
 end
