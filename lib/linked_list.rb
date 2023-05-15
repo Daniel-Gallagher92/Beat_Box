@@ -66,4 +66,16 @@ class Linked_list
     end
     phat_beats.join(" ")
   end
+
+  def includes?(data) # The method formerly known as "find"
+    current_node = self.head
+    while current_node != nil 
+      if(current_node.data == data)
+        return true
+      end
+      current_node = current_node.next_node
+    end
+    false
+  end
+  
 end
