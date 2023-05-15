@@ -99,5 +99,13 @@ RSpec.describe Linked_list do
     expect(linked_list.includes?("shoo")).to eq(false)
   end
 
- 
+  it "tests Pop method" do 
+    linked_list = Linked_list.new
+    linked_list.append("pow")
+    linked_list.append("ka")
+    linked_list.append("doom")
+
+    expect(linked_list.pop).to eq("doom")
+  end
+
 end
