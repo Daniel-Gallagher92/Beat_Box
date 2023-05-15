@@ -16,5 +16,8 @@ attr_writer :list, :head
     self.list.count
  end
 
+  def play(voice = "Trinoids", speed = "150", data = "woo hoo shu")
+    `say -r #{speed} -v #{voice} #{data}`
+  end
 
 end
