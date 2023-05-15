@@ -12,6 +12,9 @@ attr_writer :list, :head
     phat_beats_array.join(" ")
   end
 
+  def count
+    self.list.count
+ end
 
 
 end

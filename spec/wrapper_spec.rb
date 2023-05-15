@@ -26,6 +26,18 @@ RSpec.describe BeatBox do
     expect(bb.append("deep doo ditt")).to eq("deep doo ditt")
   end
 
+  it "can count" do 
+    bb = BeatBox.new 
+    list = Linked_list.new
+
+    bb.append("shoop")
+    bb.append("de")
+    bb.append("woop")
+    bb.append("derrr la")
+
+    expect(bb.count).to eq(5)
+  end
+
 
   
 end
