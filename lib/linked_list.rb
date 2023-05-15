@@ -1,6 +1,6 @@
 class Linked_list 
-  attr_reader :head, :tail, :data
-  attr_writer :head
+  attr_reader :head, :data
+  attr_writer :head, :data
 
   def initialize
   self.head = nil
@@ -39,9 +39,9 @@ class Linked_list
   end
 
   def prepend(data)
-    node = Node.new(data, nil)
-    node.next_node = head
-    self.head = node 
+    current_node = Node.new(data, nil)
+    current_node.next_node = head
+    self.head = current_node 
   end
 
   def insert(index, data)
@@ -54,16 +54,16 @@ class Linked_list
    current_node.next_node = insertion
   end
 
-  def find(data) 
-    node = self.head
-    while node != nil 
-      if(node.data == data)
-        return data
-      end
-      node = node.next_node
+  def find(index, range) 
+    phat_beats =[]
+    current_node = self.head
+    index.times do 
+      current_node = current_node.next_node
     end
-
-    false
+    while current_node != nil && phat_beats.length < range 
+      phat_beats << current_node.data
+      current_node = current_node.next_node
+    end
+    phat_beats.join(" ")
   end
-  
 end
