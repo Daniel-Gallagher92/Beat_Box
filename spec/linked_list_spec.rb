@@ -17,7 +17,7 @@ RSpec.describe Linked_list do
     expect(linked_list.head).to eq(nil)
   end
 
-  it "can append mutiple nodes" do 
+  it "can append nodes" do 
     linked_list = Linked_list.new
     puts linked_list
     linked_list.append("doop")
@@ -78,7 +78,26 @@ RSpec.describe Linked_list do
     linked_list.append("ka")
     linked_list.append("doom")
 
-    expect(linked_list.find("ka")).to eq("ka")
+    expect(linked_list.find(1,1)).to eq("ka")
   end
 
+  it "checks if node includes specific data" do 
+    linked_list = Linked_list.new
+    linked_list.append("pow")
+    linked_list.append("ka")
+    linked_list.append("doom")
+
+    expect(linked_list.includes?("ka")).to eq(true)
+  end
+
+  it "checks if node doesn't include" do 
+    linked_list = Linked_list.new
+    linked_list.append("pow")
+    linked_list.append("ka")
+    linked_list.append("doom")
+
+    expect(linked_list.includes?("shoo")).to eq(false)
+  end
+
+ 
 end
